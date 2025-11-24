@@ -1,110 +1,203 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGIPHONES - Compramos seu iPhone</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DGIPHONES – Venda seu iPhone hoje!</title>
+
+    <!-- TAG DO GOOGLE (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17755074618"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17755074618');
+    </script>
+
+    <!-- TAG DE CONVERSÃO (NÃO REMOVER) -->
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17755074618/26gfCOj128UbEILqosJC',
+            'value': 1.0,
+            'currency': 'BRL'
+        });
+    </script>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f2f2f2;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #333;
         }
 
         header {
-            background: #000;
-            color: white;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
             font-size: 24px;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
+            font-weight: bold;
         }
 
         .hero {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 50px 20px;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
         .hero-text {
-            width: 50%;
+            max-width: 450px;
         }
 
-        h1 {
-            font-size: 28px;
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
-        p {
+        .hero-text p {
             font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 20px;
         }
 
         .btn-whats {
-            background: #25D366;
-            padding: 12px 18px;
-            display: inline-block;
-            color: white;
-            font-size: 18px;
-            border-radius: 10px;
-            text-decoration: none;
+            background: #25d366;
+            padding: 14px 25px;
+            color: #fff;
             font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .hero-img {
-            width: 45%;
+            width: 300px;
             border-radius: 10px;
+        }
+
+        .steps {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .steps h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .step-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 260px;
+            text-align: center;
+        }
+
+        .step h3 {
+            color: #d10000;
+            font-size: 18px;
+        }
+
+        .map-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .map-section iframe {
+            width: 90%;
+            max-width: 900px;
+            height: 350px;
+            border: 0;
+        }
+
+        .about {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.5;
         }
 
         footer {
             margin-top: 40px;
             padding: 20px;
             background: #000;
-            color: white;
+            color: #fff;
             text-align: center;
             font-size: 15px;
         }
     </style>
-
-    <!-- TAG DO GOOGLE (NÃO APAGAR) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17755074618"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17755074618');
-    </script>
-
 </head>
 
 <body>
 
 <header>DGIPHONES</header>
 
-<div class="container">
-
-    <!-- HERO -->
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Compramos seu iPhone — mesmo quebrado, com tela trincada ou com defeito!</h1>
-            <p>Pagamos no PIX na hora. Avaliação rápida, sem burocracia e pagamento imediato.</p>
-
-            <!-- BOTÃO APONTANDO PARA A PÁGINA DE CONVERSÃO -->
-            <a href="conversao.html" class="btn-whats">COTAÇÃO NO WHATSAPP</a>
-        </div>
-
-        <img src="C2D31AAD-0696-4017-9D7C-9C6A8B76CFC6.png" class="hero-img" alt="iPhones">
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Venda seu iPhone hoje mesmo!</h1>
+        <p>Na DGIPHONES é rápido e seguro. Avaliamos seu aparelho na hora e pagamos via PIX imediatamente.</p>
+        <a href="https://wa.me/5511977030517" class="btn-whats">COTAÇÃO NO WHATSAPP</a>
     </div>
 
+    <!-- SUA IMAGEM ORIGINAL AQUI (caminho mantido) -->
+    <img src="C2D31AAD-0696-4017-9D7C-9C6A8B76CFC6.png" class="hero-img" alt="iPhones">
 </div>
+
+<!-- PASSO A PASSO -->
+<section class="steps">
+    <h2>Vender na DGIPHONES é muito fácil!</h2>
+
+    <div class="step-container">
+
+        <div class="step">
+            <h3>Passo 1 — Cotação</h3>
+            <p>Enviamos a proposta diretamente no WhatsApp.</p>
+        </div>
+
+        <div class="step">
+            <h3>Passo 2 — Avaliação</h3>
+            <p>Avaliamos seu iPhone na hora, sem burocracia.</p>
+        </div>
+
+        <div class="step">
+            <h3>Passo 3 — PIX</h3>
+            <p>Pagamento imediato via PIX no momento da entrega.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ONDE ESTAMOS -->
+<section class="map-section">
+    <h2>Onde estamos?</h2>
+
+    <p><strong>Av. Itapaiúna, 2960 – São Paulo/SP</strong></p>
+
+    <iframe 
+      src="https://www.google.com/maps?q=Av.+Itapaiuna,+2960,+Sao+Paulo&output=embed">
+    </iframe>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="about">
+    <h2>Quem somos?</h2>
+    <p>A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito. 
+    Trabalhamos com avaliação rápida, pagamento imediato e atendimento humanizado. 
+    Nosso objetivo é oferecer uma experiência simples, segura e transparente para quem deseja vender seu iPhone sem dor de cabeça.</p>
+</section>
 
 <footer>
     © 2025 DGIPHONES — Todos os direitos reservados.
