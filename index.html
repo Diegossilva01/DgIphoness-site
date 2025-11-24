@@ -1,65 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DGIPHONES - Compramos seu iPhone | Pagamento na Hora</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DGIPHONES - Compramos seu iPhone</title>
+
 <style>
-body { margin:0; font-family:Arial, sans-serif; background:white; color:#111;}
-header { position:fixed; top:0; left:0; right:0; background:#000; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; z-index:1000; }
-header .logo { color:#fff; font-size:24px; font-weight:bold; }
-header nav a { color:#fff; margin-left:20px; text-decoration:none; font-size:16px; }
-section { padding:90px 20px 40px; max-width:900px; margin:auto; }
-h1 { font-size:34px; margin-bottom:10px; }
-p { font-size:18px; line-height:1.6; }
-.btn { display:inline-block; padding:15px 20px; margin:10px 5px; border-radius:8px; font-size:18px; text-decoration:none; color:white; }
-.whats { background:#25d366; }
-.insta { background:#d62976; }
-.box { background:white; padding:25px; border-radius:10px; box-shadow:0 0 10px #00000015; margin-top:20px; }
-ul { font-size:18px; line-height:1.7; }
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f7f7f7;
+color: #111;
+}
+
+header {
+background: black;
+padding: 20px;
+color: white;
+font-size: 22px;
+font-weight: bold;
+text-align: center;
+}
+
+.container {
+max-width: 1100px;
+margin: auto;
+padding: 30px 20px;
+}
+
+.hero {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 40px 0;
+flex-wrap: wrap;
+}
+
+.hero-text {
+max-width: 500px;
+}
+
+.hero-text h1 {
+font-size: 38px;
+margin-bottom: 15px;
+font-weight: bold;
+}
+
+.hero-text p {
+font-size: 20px;
+margin-bottom: 20px;
+line-height: 1.4;
+}
+
+.btn-whats {
+background: #ff3d2e;
+color: white;
+padding: 15px 25px;
+border-radius: 8px;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+display: inline-block;
+}
+
+.hero-img {
+width: 380px;
+height: 260px;
+background: #ddd;
+border-radius: 10px;
+}
+
+.section {
+margin-top: 50px;
+}
+
+.section h2 {
+font-size: 28px;
+margin-bottom: 15px;
+}
+
+.steps {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 20px;
+}
+
+.step-box {
+background: white;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 0 10px #00000015;
+font-size: 18px;
+}
+
+.trust-box {
+background: white;
+padding: 30px;
+border-radius: 12px;
+margin-top: 20px;
+box-shadow: 0 0 10px #00000010;
+font-size: 20px;
+font-weight: bold;
+}
+
+iframe {
+width: 100%;
+height: 350px;
+border: 0;
+border-radius: 12px;
+margin-top: 10px;
+}
+
+footer {
+margin-top: 40px;
+padding: 20px;
+background: #000;
+color: white;
+text-align: center;
+font-size: 15px;
+}
 </style>
 </head>
+
 <body>
 
-<header>
-<div class="logo">DGIPHONES</div>
-<nav>
-<a href="#inicio">Início</a>
-<a href="#como">Como funciona</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
+<header>DGIPHONES</header>
 
-<section id="inicio">
-<h1>Compramos seu iPhone — Pagamento na Hora</h1>
-<p>Venda seu iPhone usado ou seminovo com avaliação rápida, segurança e pagamento imediato via PIX.</p>
-<a href="https://wa.me/5511977030517" class="btn whats">💬 Cotar no WhatsApp</a>
-<a href="https://instagram.com/DGIPHONESS" class="btn insta">📸 Falar no Instagram</a>
-</section>
+<div class="container">
 
-<section id="como">
-<div class="box">
-<h2>Como Funciona</h2>
-<ul>
-<li>📱 Envie o modelo e fotos do iPhone pelo WhatsApp</li>
-<li>⚡ Receba a avaliação em poucos minutos</li>
-<li>💰 Pagamento imediato via PIX</li>
-<li>🔒 Processo 100% seguro e transparente</li>
-</ul>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-text">
+<h1>Compramos seu iPhone — mesmo quebrado, com tela trincada ou com defeito!</h1>
+<p>Vendemos mais rápido, avaliamos na hora e pagamos via PIX em poucos minutos.</p>
+<a href="https://wa.me/5511977030517" class="btn-whats">💬 COTAÇÃO NO WHATSAPP</a>
 </div>
 
-<div class="box">
-<h2>Modelos que compramos</h2>
-<p>Do iPhone 7 ao iPhone 15 Pro Max. Aceitamos usados, seminovos e aparelhos com pequenos detalhes.</p>
+<!-- Área reservada para imagem futura -->
+<div class="hero-img"></div>
 </div>
-</section>
 
-<section id="contato">
-<h2>Contato Rápido</h2>
-<p>Clique abaixo para falar direto com a DGIPHONES:</p>
-<a href="https://wa.me/5511977030517" class="btn whats">💬 WhatsApp</a>
-<a href="https://instagram.com/DGIPHONESS" class="btn insta">📸 Instagram</a>
-</section>
+<!-- PASSO A PASSO -->
+<div class="section">
+<h2>Vender seu iPhone para a DGIPHONES é muito fácil!</h2>
+
+<div class="steps">
+<div class="step-box">
+<strong>📱 Passo 1:</strong> Envie fotos do seu iPhone pelo WhatsApp.
+</div>
+<div class="step-box">
+<strong>⚡ Passo 2:</strong> Receba a avaliação em poucos minutos.
+</div>
+<div class="step-box">
+<strong>💰 Passo 3:</strong> Pagamento imediato via PIX.
+</div>
+</div>
+</div>
+
+<!-- CONFIANÇA -->
+<div class="section">
+<h2>Por que escolher a DGIPHONES?</h2>
+
+<div class="trust-box">
+⭐ Mais de <strong>3.000 iPhones comprados só este ano</strong> — melhor avaliação do mercado!
+</div>
+
+<div class="trust-box">
+💵 Pagamento imediato via PIX — segurança e agilidade.
+</div>
+
+<div class="trust-box">
+🔒 Processo rápido, seguro e sem burocracia.
+</div>
+</div>
+
+<!-- ONDE ESTAMOS -->
+<div class="section">
+<h2>Onde estamos?</h2>
+
+<p>📍 Rua Itapaiúna, 2960 — São Paulo, SP</p>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.870983705359!2d-46.737013!3d-23.540737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce565242ab7fa7%3A0xdd8c9ceafc313d85!2sR.%20Itapai%C3%BAna%2C%202960%20-%20Vila%20Andrade%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005740-020!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"></iframe>
+
+</div>
+
+</div>
+
+<footer>© 2025 DGIPHONES — Todos os direitos reservados.</footer>
 
 </body>
 </html>
