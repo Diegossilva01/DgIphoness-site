@@ -23,121 +23,147 @@
         });
     </script>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #333;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+        color: #333;
+    }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    header {
+        text-align: center;
+        padding: 25px;
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
 
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 20px;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+    /* HERO */
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 8%;
+        flex-wrap: wrap;
+    }
 
-        .hero-text {
-            max-width: 450px;
-        }
+    .hero-text {
+        max-width: 450px;
+    }
 
-        .hero-text h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+    .hero-text h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
 
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
+    .hero-text p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
 
-        .btn-whats {
-            background: #25d366;
-            padding: 14px 25px;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-        }
+    .btn-whats {
+        background: #25d366;
+        padding: 16px 30px;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+    }
 
-        .hero-img {
-            width: 300px;
-            border-radius: 10px;
-        }
+    .hero-img {
+        width: 320px;
+    }
 
-        .steps {
-            text-align: center;
-            padding: 60px 20px;
-        }
+    /* PASSO A PASSO */
+    .steps {
+        text-align: center;
+        padding: 60px 20px;
+        background: #fafafa;
+    }
 
-        .steps h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
-        }
+    .steps h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
 
-        .step-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+    .step-container {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
 
-        .step {
-            width: 260px;
-            text-align: center;
-        }
+    .step {
+        width: 260px;
+    }
 
-        .step h3 {
-            color: #d10000;
-            font-size: 18px;
-        }
+    .step h3 {
+        font-size: 18px;
+        color: #c00000;
+    }
 
-        .map-section {
-            text-align: center;
-            padding: 60px 20px;
-        }
+    /* ONDE ESTAMOS */
+    .map-section {
+        text-align: center;
+        padding: 60px 20px;
+    }
 
-        .map-section iframe {
-            width: 90%;
-            max-width: 900px;
-            height: 350px;
-            border: 0;
-        }
+    .map-box {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
 
-        .about {
-            text-align: center;
-            padding: 60px 20px;
-        }
+    .map-box iframe {
+        width: 450px;
+        height: 350px;
+        border: 0;
+        border-radius: 10px;
+    }
 
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 17px;
-            line-height: 1.5;
-        }
+    .local-img {
+        width: 450px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
 
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            font-size: 15px;
-        }
-    </style>
+    /* QUEM SOMOS */
+    .about {
+        text-align: center;
+        padding: 60px 20px;
+        background: #fafafa;
+    }
+
+    .about p {
+        max-width: 750px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 40px;
+        padding: 25px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    footer a {
+        color: #25d366;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
 </head>
 
 <body>
@@ -152,7 +178,6 @@
         <a href="https://wa.me/5511977030517" class="btn-whats">COTAÇÃO NO WHATSAPP</a>
     </div>
 
-    <!-- SUA IMAGEM ORIGINAL AQUI (caminho mantido) -->
     <img src="C2D31AAD-0696-4017-9D7C-9C6A8B76CFC6.png" class="hero-img" alt="iPhones">
 </div>
 
@@ -161,7 +186,6 @@
     <h2>Vender na DGIPHONES é muito fácil!</h2>
 
     <div class="step-container">
-
         <div class="step">
             <h3>Passo 1 — Cotação</h3>
             <p>Enviamos a proposta diretamente no WhatsApp.</p>
@@ -176,32 +200,35 @@
             <h3>Passo 3 — PIX</h3>
             <p>Pagamento imediato via PIX no momento da entrega.</p>
         </div>
-
     </div>
 </section>
 
 <!-- ONDE ESTAMOS -->
 <section class="map-section">
     <h2>Onde estamos?</h2>
-
     <p><strong>Av. Itapaiúna, 2960 – São Paulo/SP</strong></p>
 
-    <iframe 
-      src="https://www.google.com/maps?q=Av.+Itapaiuna,+2960,+Sao+Paulo&output=embed">
-    </iframe>
+    <div class="map-box">
+        <img src="local.jpg" class="local-img" alt="Local DGIPHONES">
+        
+        <iframe
+            src="https://www.google.com/maps?q=Av.+Itapaiuna,+2960,+Sao+Paulo&output=embed">
+        </iframe>
+    </div>
 </section>
 
 <!-- QUEM SOMOS -->
 <section class="about">
     <h2>Quem somos?</h2>
-    <p>A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito. 
-    Trabalhamos com avaliação rápida, pagamento imediato e atendimento humanizado. 
-    Nosso objetivo é oferecer uma experiência simples, segura e transparente para quem deseja vender seu iPhone sem dor de cabeça.</p>
+    <p>A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito. Trabalhamos com avaliação rápida, 
+    pagamento imediato via PIX e atendimento humanizado. Nosso objetivo é oferecer uma experiência simples, segura e 
+    transparente para quem deseja vender seu iPhone sem dor de cabeça.</p>
 </section>
 
 <footer>
-    © 2025 DGIPHONES — Todos os direitos reservados.
+    © 2025 DGIPHONES — Todos os direitos reservados.  
+    <br>Instagram: <a href="https://instagram.com/dgiphoness">@dgiphoness</a>
 </footer>
 
 </body>
-</html>
+</html>P
