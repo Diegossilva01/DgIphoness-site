@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DGIPHONES – Venda seu iPhone hoje!</title>
 
-    <!-- TAG DO GOOGLE (gtag.js) -->
+    <!-- TAG DO GOOGLE -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17755074618"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,17 +14,7 @@
         gtag('config', 'AW-17755074618');
     </script>
 
-    <!-- EVENTO DE CONVERSÃO -->
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-17755074618/26gfCOj128UbEILqosJC',
-            'value': 1.0,
-            'currency': 'BRL'
-        });
-    </script>
-
 <style>
-
     body {
         margin: 0;
         padding: 0;
@@ -36,89 +26,100 @@
     header {
         text-align: center;
         padding: 25px;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: bold;
     }
 
-    /* HERO — CENTRALIZADO IGUAL USADOSTORE */
+    /* HERO */
     .hero {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 60px 20px;
         gap: 60px;
+        flex-wrap: wrap;
         max-width: 1200px;
         margin: auto;
-        flex-wrap: wrap;
     }
 
     .hero-text {
         max-width: 450px;
+        text-align: left;
     }
 
     .hero-text h1 {
-        font-size: 36px;
+        font-size: 34px;
         margin-bottom: 15px;
         font-weight: bold;
     }
 
     .hero-text p {
         font-size: 18px;
-        line-height: 1.5;
         margin-bottom: 20px;
+        line-height: 1.5;
     }
 
     .btn-whats {
         background: #d10000;
-        padding: 15px 30px;
+        padding: 14px 25px;
         color: #fff;
-        font-weight: bold;
-        border-radius: 8px;
+        border-radius: 6px;
         text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
+        font-weight: bold;
     }
 
     .hero-img {
-        width: 300px;
+        width: 320px;
     }
 
-    /* PASSOS – TODOS LADO A LADO */
-    .steps {
+    /* TÍTULOS */
+    h2.section-title {
         text-align: center;
-        padding: 60px 20px;
-    }
-
-    .steps h2 {
         font-size: 28px;
-        margin-bottom: 40px;
-        font-weight: bold;
+        margin-top: 40px;
     }
 
-    .step-container {
+    /* PASSO A PASSO */
+    .steps-box {
         display: flex;
         justify-content: center;
-        gap: 25px;
+        gap: 30px;
+        padding: 30px 20px;
         flex-wrap: wrap;
-        max-width: 1000px;
-        margin: auto;
     }
 
     .step {
-        width: 280px;
-        background: #f7f7f7;
-        padding: 20px;
-        border-radius: 12px;
-        border: 1px solid #eee;
+        background: #f4f4f4;
+        width: 260px;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.07);
     }
 
     .step h3 {
-        color: #d10000;
         font-size: 18px;
+        color: #d10000;
         margin-bottom: 10px;
     }
 
-    /* ONDE ESTAMOS */
+    /* POR QUE VENDER */
+    .benefits {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    .benefit-box {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-size: 17px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.07);
+    }
+
+    /* MAPA */
     .map-section {
         text-align: center;
         padding: 60px 20px;
@@ -129,8 +130,23 @@
         max-width: 900px;
         height: 350px;
         border: 0;
+        border-radius: 10px;
     }
 
+    /* SOBRE */
+    .about {
+        text-align: center;
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .about p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* FOOTER */
     footer {
         margin-top: 40px;
         padding: 20px;
@@ -139,7 +155,6 @@
         text-align: center;
         font-size: 15px;
     }
-
 </style>
 </head>
 
@@ -148,47 +163,62 @@
 <header>DGIPHONES</header>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
     <div class="hero-text">
         <h1>Venda seu iPhone hoje mesmo!</h1>
         <p>Na DGIPHONES é rápido e seguro. Avaliamos seu aparelho na hora e pagamos via PIX imediatamente.</p>
+
         <a href="https://wa.me/5511977030517" class="btn-whats">COTAÇÃO NO WHATSAPP</a>
     </div>
 
-    <!-- IMAGEM ORIGINAL -->
     <img src="C2D31AAD-0696-4017-9D7C-9C6A8B76CFC6.png" class="hero-img" alt="iPhones">
+</section>
+
+<!-- PASSO A PASSO -->
+<h2 class="section-title">Vender seu iPhone para a DGIPHONES é muito fácil!</h2>
+
+<div class="steps-box">
+
+    <div class="step">
+        <h3>📱 Passo 1 — Cotação</h3>
+        <p>Envie fotos do seu iPhone pelo WhatsApp.</p>
+    </div>
+
+    <div class="step">
+        <h3>⚡ Passo 2 — Avaliação</h3>
+        <p>Receba a avaliação em poucos minutos.</p>
+    </div>
+
+    <div class="step">
+        <h3>💰 Passo 3 — PIX</h3>
+        <p>Pagamento imediato via PIX.</p>
+    </div>
+
 </div>
 
-<!-- PASSOS -->
-<section class="steps">
-    <h2>Vender seu iPhone para a DGIPHONES é muito fácil!</h2>
+<!-- BENEFÍCIOS -->
+<h2 class="section-title">Por que escolher a DGIPHONES?</h2>
 
-    <div class="step-container">
-
-        <div class="step">
-            <h3>📱 Passo 1 — Cotação</h3>
-            <p>Envie fotos do seu iPhone pelo WhatsApp.</p>
-        </div>
-
-        <div class="step">
-            <h3>⚡ Passo 2 — Avaliação</h3>
-            <p>Receba a avaliação em poucos minutos.</p>
-        </div>
-
-        <div class="step">
-            <h3>💰 Passo 3 — PIX</h3>
-            <p>Pagamento imediato via PIX.</p>
-        </div>
-
-    </div>
+<section class="benefits">
+    <div class="benefit-box">⭐ Mais de 3.000 iPhones comprados só este ano — melhor avaliação do mercado!</div>
+    <div class="benefit-box">💸 Pagamento imediato via PIX — segurança e agilidade.</div>
+    <div class="benefit-box">⚙️ Processo rápido, seguro e sem burocracia.</div>
 </section>
 
 <!-- ONDE ESTAMOS -->
 <section class="map-section">
     <h2>Onde estamos?</h2>
-    <p><strong>Av. Itapaiúna, 2960 — São Paulo/SP</strong></p>
+    <p><strong>Rua Itapaiúna, 2960 — São Paulo, SP</strong></p>
 
-    <iframe src="https://www.google.com/maps?q=Av.+Itapaiuna,+2960,+Sao+Paulo&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Rua+Itapaiuna+2960+Sao+Paulo&output=embed"></iframe>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="about">
+    <h2>Quem somos?</h2>
+    <p>A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito.
+       Trabalhamos com avaliação rápida, pagamento imediato e atendimento humanizado.
+       Nosso compromisso é oferecer a melhor experiência de venda de iPhone de São Paulo.</p>
 </section>
 
 <footer>
