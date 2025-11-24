@@ -14,7 +14,7 @@
         gtag('config', 'AW-17755074618');
     </script>
 
-    <!-- TAG DE CONVERSÃO (NÃO REMOVER) -->
+    <!-- TAG DE CONVERSÃO -->
     <script>
         gtag('event', 'conversion', {
             'send_to': 'AW-17755074618/26gfCOj128UbEILqosJC',
@@ -23,147 +23,152 @@
         });
     </script>
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #ffffff;
-        color: #333;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
 
-    header {
-        text-align: center;
-        padding: 25px;
-        font-size: 26px;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
+        header {
+            text-align: center;
+            padding: 25px 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
 
-    /* HERO */
-    .hero {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 60px 8%;
-        flex-wrap: wrap;
-    }
+        /* HERO */
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-    .hero-text {
-        max-width: 450px;
-    }
+        .hero-text {
+            max-width: 480px;
+        }
 
-    .hero-text h1 {
-        font-size: 36px;
-        margin-bottom: 15px;
-    }
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
 
-    .hero-text p {
-        font-size: 18px;
-        margin-bottom: 20px;
-        line-height: 1.4;
-    }
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
 
-    .btn-whats {
-        background: #25d366;
-        padding: 16px 30px;
-        color: white;
-        font-weight: bold;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 16px;
-    }
+        .btn-whats {
+            background: #D64545;
+            padding: 14px 28px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-    .hero-img {
-        width: 320px;
-    }
+        .hero-img {
+            width: 330px;
+            border-radius: 14px;
+        }
 
-    /* PASSO A PASSO */
-    .steps {
-        text-align: center;
-        padding: 60px 20px;
-        background: #fafafa;
-    }
+        /* TÍTULO DE SEÇÕES */
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 70px;
+            margin-bottom: 40px;
+        }
 
-    .steps h2 {
-        font-size: 28px;
-        margin-bottom: 40px;
-    }
+        /* PASSO A PASSO */
+        .steps {
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    .step-container {
-        display: flex;
-        justify-content: center;
-        gap: 60px;
-        flex-wrap: wrap;
-    }
+        .step-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-    .step {
-        width: 260px;
-    }
+        .step {
+            width: 300px;
+            background: #f7f7f7;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 17px;
+        }
 
-    .step h3 {
-        font-size: 18px;
-        color: #c00000;
-    }
+        .step h3 {
+            color: #c10000;
+            margin-bottom: 10px;
+        }
 
-    /* ONDE ESTAMOS */
-    .map-section {
-        text-align: center;
-        padding: 60px 20px;
-    }
+        /* BENEFÍCIOS */
+        .benefits {
+            max-width: 900px;
+            margin: 60px auto;
+        }
 
-    .map-box {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        margin-top: 20px;
-    }
+        .benefit {
+            background: #f3f3f3;
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
 
-    .map-box iframe {
-        width: 450px;
-        height: 350px;
-        border: 0;
-        border-radius: 10px;
-    }
+        /* MAPA */
+        .map-section {
+            text-align: center;
+            margin-top: 70px;
+        }
 
-    .local-img {
-        width: 450px;
-        height: 350px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
+        .map-section iframe {
+            width: 90%;
+            max-width: 900px;
+            height: 350px;
+            border: 0;
+            border-radius: 12px;
+        }
 
-    /* QUEM SOMOS */
-    .about {
-        text-align: center;
-        padding: 60px 20px;
-        background: #fafafa;
-    }
+        /* QUEM SOMOS */
+        .about {
+            max-width: 800px;
+            margin: 70px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
 
-    .about p {
-        max-width: 750px;
-        margin: auto;
-        font-size: 18px;
-        line-height: 1.5;
-    }
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    /* FOOTER */
-    footer {
-        margin-top: 40px;
-        padding: 25px;
-        background: #000;
-        color: #fff;
-        text-align: center;
-        font-size: 16px;
-    }
-
-    footer a {
-        color: #25d366;
-        text-decoration: none;
-        font-weight: bold;
-    }
-</style>
+        /* RODAPÉ */
+        footer {
+            margin-top: 60px;
+            padding: 25px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
@@ -182,53 +187,56 @@
 </div>
 
 <!-- PASSO A PASSO -->
-<section class="steps">
-    <h2>Vender na DGIPHONES é muito fácil!</h2>
-
+<h2>Vender seu iPhone para a DGIPHONES é muito fácil!</h2>
+<div class="steps">
     <div class="step-container">
         <div class="step">
-            <h3>Passo 1 — Cotação</h3>
-            <p>Enviamos a proposta diretamente no WhatsApp.</p>
+            <h3>📱 Passo 1 — Cotação</h3>
+            Envie fotos do seu iPhone pelo WhatsApp.
         </div>
 
         <div class="step">
-            <h3>Passo 2 — Avaliação</h3>
-            <p>Avaliamos seu iPhone na hora, sem burocracia.</p>
+            <h3>⚡ Passo 2 — Avaliação</h3>
+            Receba a avaliação em poucos minutos.
         </div>
 
         <div class="step">
-            <h3>Passo 3 — PIX</h3>
-            <p>Pagamento imediato via PIX no momento da entrega.</p>
+            <h3>💸 Passo 3 — PIX</h3>
+            Pagamento imediato via PIX.
         </div>
     </div>
-</section>
+</div>
 
-<!-- ONDE ESTAMOS -->
+<!-- BENEFÍCIOS -->
+<div class="benefits">
+    <div class="benefit">⭐ Mais de 3.000 iPhones comprados — melhor avaliação do mercado!</div>
+    <div class="benefit">💰 Pagamento imediato via PIX — segurança e agilidade.</div>
+    <div class="benefit">⚙️ Processo rápido, seguro e sem burocracia.</div>
+</div>
+
+<!-- MAPA -->
 <section class="map-section">
     <h2>Onde estamos?</h2>
-    <p><strong>Av. Itapaiúna, 2960 – São Paulo/SP</strong></p>
+    <p><strong>Rua Itapaiúna, 2960 — São Paulo, SP</strong></p>
 
-    <div class="map-box">
-        <img src="local.jpg" class="local-img" alt="Local DGIPHONES">
-        
-        <iframe
-            src="https://www.google.com/maps?q=Av.+Itapaiuna,+2960,+Sao+Paulo&output=embed">
-        </iframe>
-    </div>
+    <iframe
+        src="https://www.google.com/maps?q=Rua+Itapaiuna,+2960,+São+Paulo&output=embed">
+    </iframe>
 </section>
 
 <!-- QUEM SOMOS -->
 <section class="about">
     <h2>Quem somos?</h2>
-    <p>A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito. Trabalhamos com avaliação rápida, 
-    pagamento imediato via PIX e atendimento humanizado. Nosso objetivo é oferecer uma experiência simples, segura e 
-    transparente para quem deseja vender seu iPhone sem dor de cabeça.</p>
+    <p>
+        A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito.
+        Avaliação simples e imediata, pagamento seguro via PIX e atendimento humanizado.
+        Nosso foco é oferecer uma experiência rápida, transparente e sem dor de cabeça.
+    </p>
 </section>
 
 <footer>
-    © 2025 DGIPHONES — Todos os direitos reservados.  
-    <br>Instagram: <a href="https://instagram.com/dgiphoness">@dgiphoness</a>
+    © 2025 DGIPHONES — Todos os direitos reservados. • Instagram: @dgiphoness
 </footer>
 
 </body>
-</html>P
+</html>
