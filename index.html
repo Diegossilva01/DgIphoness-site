@@ -48,24 +48,26 @@
     }
 
     .hero-text h1 {
-        font-size: 34px;
+        font-size: 36px;
         margin-bottom: 15px;
         font-weight: bold;
     }
 
     .hero-text p {
-        font-size: 18px;
-        margin-bottom: 20px;
-        line-height: 1.5;
+        font-size: 19px;
+        margin-bottom: 25px;
+        line-height: 1.6;
     }
 
     .btn-whats {
         background: #d10000;
-        padding: 14px 25px;
+        padding: 16px 28px;
         color: #fff;
-        border-radius: 6px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: bold;
+        font-size: 17px;
+        display: inline-block;
     }
 
     .hero-img {
@@ -103,7 +105,7 @@
         margin-bottom: 10px;
     }
 
-    /* POR QUE VENDER */
+    /* BENEFÍCIOS */
     .benefits {
         max-width: 900px;
         margin: auto;
@@ -155,6 +157,44 @@
         text-align: center;
         font-size: 15px;
     }
+
+    /* BOTÃO WHATS FIXO */
+    .whats-fixo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+        .hero {
+            padding: 40px 15px;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 30px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+        }
+
+        .hero-img {
+            width: 220px;
+        }
+    }
 </style>
 </head>
 
@@ -165,65 +205,66 @@
 <!-- HERO -->
 <section class="hero">
     <div class="hero-text">
-        <h1>Venda seu iPhone hoje mesmo!</h1>
-        <p>No DGIPHONES é rápido e seguro. Avaliamos seu aparelho na hora e pagamos via PIX imediatamente.</p>
+        <h1>Venda seu iPhone hoje mesmo</h1>
+        <p>Avaliação rápida, pagamento imediato via PIX e atendimento seguro em loja física.</p>
 
-        <a href="https://wa.me/5511977030517" class="btn-whats">COTAÇÃO NO WHATSAPP</a>
+        <a href="https://wa.me/5511977030517" class="btn-whats">
+            RECEBER COTAÇÃO AGORA NO WHATSAPP
+        </a>
     </div>
 
     <img src="C2D31AAD-0696-4017-9D7C-9C6A8B76CFC6.png" class="hero-img" alt="iPhones">
 </section>
 
-<!-- PASSO A PASSO -->
-<h2 class="section-title">Vender seu iPhone para a DGIPHONES é muito fácil!</h2>
+<h2 class="section-title">Vender seu iPhone para a DGIPHONES é muito fácil</h2>
 
 <div class="steps-box">
-
     <div class="step">
-        <h3>📱 Passo 1 — Cotação</h3>
-        <p>Envie fotos do seu iPhone pelo WhatsApp.</p>
+        <h3>📱 Passo 1</h3>
+        <p>Envie fotos do seu iPhone no WhatsApp.</p>
     </div>
 
     <div class="step">
-        <h3>⚡ Passo 2 — Avaliação</h3>
-        <p>Receba a avaliação em poucos minutos.</p>
+        <h3>⚡ Passo 2</h3>
+        <p>Avaliação rápida em poucos minutos.</p>
     </div>
 
     <div class="step">
-        <h3>💰 Passo 3 — PIX</h3>
-        <p>Pagamento imediato via PIX.</p>
+        <h3>💰 Passo 3</h3>
+        <p>Receba o pagamento imediato via PIX.</p>
     </div>
-
 </div>
 
-<!-- BENEFÍCIOS -->
 <h2 class="section-title">Por que escolher a DGIPHONES?</h2>
 
 <section class="benefits">
-    <div class="benefit-box">⭐ Mais de 3.000 iPhones comprados só este ano — melhor avaliação do mercado!</div>
-    <div class="benefit-box">💸 Pagamento imediato via PIX — segurança e agilidade.</div>
-    <div class="benefit-box">⚙️ Processo rápido, seguro e sem burocracia.</div>
+    <div class="benefit-box">⭐ Mais de 3.000 iPhones comprados só este ano</div>
+    <div class="benefit-box">💸 Pagamento imediato via PIX</div>
+    <div class="benefit-box">🏬 Loja física em São Paulo — segurança total</div>
 </section>
 
-<!-- ONDE ESTAMOS -->
 <section class="map-section">
     <h2>Onde estamos?</h2>
     <p><strong>Rua Itapaiúna, 2960 — São Paulo, SP</strong></p>
-
     <iframe src="https://www.google.com/maps?q=Rua+Itapaiuna+2960+Sao+Paulo&output=embed"></iframe>
 </section>
 
-<!-- QUEM SOMOS -->
 <section class="about">
     <h2>Quem somos?</h2>
-    <p>A DGIPHONES é especializada na compra de iPhones usados, quebrados ou com defeito.
-       Trabalhamos com avaliação rápida, pagamento imediato e atendimento humanizado.
-       Nosso compromisso é oferecer a melhor experiência de venda de iPhone de São Paulo.</p>
+    <p>
+        Somos especialistas na compra de iPhones usados, quebrados ou com defeito.
+        Avaliação justa, pagamento imediato e atendimento profissional.
+    </p>
 </section>
 
 <footer>
     © 2025 DGIPHONES — Todos os direitos reservados.
 </footer>
+
+<!-- WHATSAPP FIXO -->
+<a href="https://wa.me/5511977030517" class="whats-fixo">
+    💬 Falar no WhatsApp
+</a>
 
 </body>
 </html>
