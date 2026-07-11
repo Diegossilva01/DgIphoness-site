@@ -1,452 +1,270 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DGIPHONES – Venda seu iPhone hoje!</title>
 
-<title>Venda seu iPhone | CELL TECH PANAMBY</title>
-
-<meta name="description" content="Venda seu iPhone com segurança. Receba uma avaliação rápida e atendimento pelo Instagram da CELL TECH PANAMBY.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- TAG DO GOOGLE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17755074618"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17755074618');
+    </script>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#000;
-color:#fff;
-}
-
-header{
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
-
-.logo{
-font-size:28px;
-font-weight:700;
-color:#FFD400;
-}
-
-.btn-topo{
-
-background:#FFD400;
-color:#000;
-padding:12px 22px;
-text-decoration:none;
-border-radius:8px;
-font-weight:600;
-
-}
-
-.hero{
-
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-
-}
-
-.hero h1{
-
-font-size:55px;
-line-height:1.1;
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:20px;
-color:#ddd;
-margin-bottom:30px;
-
-}
-
-.botao{
-
-display:inline-block;
-background:#FFD400;
-color:#000;
-padding:18px 35px;
-font-size:20px;
-font-weight:bold;
-border-radius:10px;
-text-decoration:none;
-transition:.3s;
-
-}
-
-.botao:hover{
-
-transform:scale(1.05);
-
-}
-
-.card{
-
-background:#111;
-padding:35px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(255,212,0,.15);
-
-}
-
-.card h2{
-
-margin-bottom:20px;
-
-}
-
-.lista{
-
-margin-top:20px;
-
-}
-
-.lista li{
-
-margin-bottom:15px;
-
-}
-
-section{
-
-padding:80px 20px;
-
-}
-
-.container{
-
-max-width:1200px;
-margin:auto;
-
-}
-
-.titulo{
-
-text-align:center;
-font-size:40px;
-margin-bottom:60px;
-
-}
-
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-
-}
-
-.item{
-
-background:#111;
-padding:30px;
-border-radius:20px;
-text-align:center;
-
-}
-
-.item h3{
-
-margin:20px 0;
-
-}
-
-.depoimentos{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-
-}
-
-.depoimento{
-
-background:#111;
-padding:30px;
-border-radius:20px;
-
-}
-
-.cta{
-
-text-align:center;
-background:#FFD400;
-color:#000;
-padding:80px 20px;
-
-}
-
-.cta h2{
-
-font-size:45px;
-margin-bottom:20px;
-
-}
-
-footer{
-
-padding:30px;
-text-align:center;
-background:#111;
-color:#888;
-
-}
-
-@media(max-width:900px){
-
-.hero{
-
-grid-template-columns:1fr;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-}
-
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 25px;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    /* HERO */
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+        gap: 60px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .hero-text {
+        max-width: 450px;
+        text-align: left;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .hero-text p {
+        font-size: 19px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .btn-whats {
+        background: #d10000;
+        padding: 16px 28px;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 17px;
+        display: inline-block;
+    }
+
+    .hero-img {
+        width: 320px;
+    }
+
+    /* TÍTULOS */
+    h2.section-title {
+        text-align: center;
+        font-size: 28px;
+        margin-top: 40px;
+    }
+
+    /* PASSO A PASSO */
+    .steps-box {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 20px;
+        flex-wrap: wrap;
+    }
+
+    .step {
+        background: #f4f4f4;
+        width: 260px;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.07);
+    }
+
+    .step h3 {
+        font-size: 18px;
+        color: #d10000;
+        margin-bottom: 10px;
+    }
+
+    /* BENEFÍCIOS */
+    .benefits {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    .benefit-box {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-size: 17px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.07);
+    }
+
+    /* MAPA */
+    .map-section {
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .map-section iframe {
+        width: 90%;
+        max-width: 900px;
+        height: 350px;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    /* SOBRE */
+    .about {
+        text-align: center;
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .about p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 40px;
+        padding: 20px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    /* BOTÃO WHATS FIXO */
+    .whats-fixo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+        .hero {
+            padding: 40px 15px;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 30px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+        }
+
+        .hero-img {
+            width: 220px;
+        }
+    }
 </style>
-
 </head>
 
 <body>
 
-<header>
+<header>DGIPHONES</header>
 
-<div class="logo">
-
-CELL TECH PANAMBY
-
-</div>
-
-<a href="https://instagram.com/SEU_USUARIO_INSTAGRAM" class="btn-topo" target="_blank">
-
-Instagram
-
-</a>
-
-</header>
-
+<!-- HERO -->
 <section class="hero">
+    <div class="hero-text">
+        <h1>Venda seu iPhone hoje mesmo</h1>
+        <p>Avaliação rápida, pagamento imediato via PIX e atendimento seguro em loja física.</p>
 
-<div>
+        <a href="https://wa.me/5511977030517" class="btn-whats">
+            RECEBER COTAÇÃO AGORA NO WHATSAPP
+        </a>
+    </div>
 
-<h1>
-
-Venda seu iPhone Hoje!
-
-</h1>
-
-<p>
-
-Receba uma avaliação rápida e fale diretamente com nosso atendimento especializado pelo Instagram.
-
-</p>
-
-<a
-
-href="https://instagram.com/SEU_USUARIO_INSTAGRAM"
-
-target="_blank"
-
-class="botao">
-
-📲 Falar no Instagram
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>
-
-Por que vender conosco?
-
-</h2>
-
-<ul class="lista">
-
-<li>✅ Loja Física</li>
-
-<li>✅ Atendimento rápido</li>
-
-<li>✅ Avaliação profissional</li>
-
-<li>✅ Compra de iPhones XR ao 16 Pro Max</li>
-
-<li>✅ Processo simples e seguro</li>
-
-</ul>
-
-</div>
-
+    <img src="C2D31AAD-0696-4017-9D7C-9C6A8B76CFC6.png" class="hero-img" alt="iPhones">
 </section>
 
-<section>
+<h2 class="section-title">Vender seu iPhone para a DGIPHONES é muito fácil</h2>
 
-<div class="container">
+<div class="steps-box">
+    <div class="step">
+        <h3>📱 Passo 1</h3>
+        <p>Envie fotos do seu iPhone no WhatsApp.</p>
+    </div>
 
-<h2 class="titulo">
+    <div class="step">
+        <h3>⚡ Passo 2</h3>
+        <p>Avaliação rápida em poucos minutos.</p>
+    </div>
 
-Como Funciona
-
-</h2>
-
-<div class="cards">
-
-<div class="item">
-
-<h3>1</h3>
-
-<p>
-
-Clique no botão e fale conosco.
-
-</p>
-
+    <div class="step">
+        <h3>💰 Passo 3</h3>
+        <p>Receba o pagamento imediato via PIX.</p>
+    </div>
 </div>
 
-<div class="item">
+<h2 class="section-title">Por que escolher a DGIPHONES?</h2>
 
-<h3>2</h3>
-
-<p>
-
-Envie o modelo e as fotos do seu iPhone.
-
-</p>
-
-</div>
-
-<div class="item">
-
-<h3>3</h3>
-
-<p>
-
-Receba sua proposta rapidamente.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="benefits">
+    <div class="benefit-box">⭐ Mais de 3.000 iPhones comprados só este ano</div>
+    <div class="benefit-box">💸 Pagamento imediato via PIX</div>
+    <div class="benefit-box">🏬 Loja física em São Paulo — segurança total</div>
 </section>
 
-<section>
-
-<div class="container">
-
-<h2 class="titulo">
-
-O que nossos clientes dizem
-
-</h2>
-
-<div class="depoimentos">
-
-<div class="depoimento">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Atendimento rápido e seguro.
-
-</p>
-
-</div>
-
-<div class="depoimento">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Recebi minha proposta rapidamente.
-
-</p>
-
-</div>
-
-<div class="depoimento">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Excelente experiência.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="map-section">
+    <h2>Onde estamos?</h2>
+    <p><strong>Rua Itapaiúna, 2960 — São Paulo, SP</strong></p>
+    <iframe src="https://www.google.com/maps?q=Rua+Itapaiuna+2960+Sao+Paulo&output=embed"></iframe>
 </section>
 
-<section class="cta">
-
-<h2>
-
-Quer vender seu iPhone?
-
-</h2>
-
-<p>
-
-Clique abaixo e fale agora mesmo com nossa equipe.
-
-</p>
-
-<br><br>
-
-<a
-
-href="https://instagram.com/SEU_USUARIO_INSTAGRAM"
-
-target="_blank"
-
-class="botao">
-
-📲 IR PARA O INSTAGRAM
-
-</a>
-
+<section class="about">
+    <h2>Quem somos?</h2>
+    <p>
+        Somos especialistas na compra de iPhones usados, quebrados ou com defeito.
+        Avaliação justa, pagamento imediato e atendimento profissional.
+    </p>
 </section>
 
 <footer>
-
-© 2026 CELL TECH PANAMBY - Todos os direitos reservados.
-
+    © 2025 DGIPHONES — Todos os direitos reservados.
 </footer>
+
+<!-- WHATSAPP FIXO -->
+<a href="https://wa.me/5511977030517" class="whats-fixo">
+    💬 Falar no WhatsApp
+</a>
 
 </body>
 </html>
