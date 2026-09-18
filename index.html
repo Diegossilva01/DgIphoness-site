@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#11131a" />
+  <title>Ludo Friends</title>
+  <link rel="stylesheet" href="./styles.css?v=20" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" id="brandBtn" aria-label="Ludo Friends">
+        <span class="brand-mark">LF</span><span><strong>Ludo</strong> Friends</span>
+      </a>
+      <div class="top-actions">
+        <span id="connectionBadge" class="badge">pronto</span>
+        <button id="soundBtn" class="icon-btn" type="button" title="Som">🔊</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="modeView" class="view active">
+        <div class="mode-wrap">
+          <div class="mode-card card">
+            <div class="mode-icon">🎲</div>
+            <span class="eyebrow">Escolha como jogar</span>
+            <h1>Ludo Friends</h1>
+            <p>Jogue com um amigo por link, contra o robô ou com duas pessoas no mesmo celular.</p>
+            <button id="friendModeBtn" class="btn primary big full" type="button">🌐 Jogar com amigo</button>
+            <button id="botModeBtn" class="btn secondary big full" type="button">🤖 Jogar contra o Robô</button>
+            <button id="localModeBtn" class="btn secondary big full" type="button">👥 2 jogadores no mesmo celular</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="lobbyView" class="view">
+        <div class="mode-wrap">
+          <div class="mode-card card online-lobby-card">
+            <div class="mode-icon">🌐</div>
+            <span class="eyebrow">Jogar com amigo</span>
+            <h1 id="lobbyTitle">Sala criada</h1>
+            <p id="lobbyText">Envie o link abaixo para seu amigo. Quando ele entrar, a partida começa automaticamente.</p>
+            <div class="room-code-box">
+              <span>CÓDIGO DA SALA</span>
+              <strong id="roomCode">------</strong>
+            </div>
+            <div class="invite-link-box" id="inviteLink">Preparando convite...</div>
+            <button id="shareBtn" class="btn primary big full" type="button">📲 Compartilhar convite</button>
+            <button id="copyBtn" class="btn secondary big full" type="button">🔗 Copiar link</button>
+            <button id="cancelLobbyBtn" class="btn ghost full" type="button">← Voltar</button>
+            <div class="connection-state" id="lobbyStatus"><i></i><span>Preparando sala...</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameView" class="view">
+        <div class="game-layout">
+          <div class="game-main card">
+            <div class="game-head">
+              <div>
+                <span class="eyebrow" id="gameModeLabel">Partida</span>
+                <h2 id="turnTitle">Sua vez!</h2>
+              </div>
+              <button id="backBtn" class="btn secondary small" type="button">← Menu</button>
+            </div>
+            <div id="board" class="board" aria-label="Tabuleiro de Ludo"></div>
+          </div>
+
+          <aside class="game-side">
+            <div class="card dice-card">
+              <div id="dice" class="dice" aria-label="Dado">⚄</div>
+              <button id="rollBtn" class="btn primary full" type="button">Jogar dado</button>
+              <p id="actionHint" class="center subtle">Jogue o dado.</p>
+            </div>
+            <div class="card">
+              <div class="panel-head"><h3>Placar</h3><span id="roundBadge" class="badge">Em jogo</span></div>
+              <div id="scoreList" class="score-list"></div>
+            </div>
+            <div class="card log-card">
+              <h3>Partida</h3>
+              <div id="gameLog" class="game-log"></div>
+            </div>
+            <button id="newGameBtn" class="btn secondary full" type="button">🔄 Nova partida</button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="./game.js?v=20"></script>
+</body>
+</html>
