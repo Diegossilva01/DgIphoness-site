@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#11131a" />
+  <title>Ludo Friends</title>
+  <link rel="stylesheet" href="/styles.css?v=5" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Ludo Friends">
+        <span class="brand-mark">LF</span><span><strong>Ludo</strong> Friends</span>
+      </a>
+      <div class="top-actions">
+        <span id="connectionBadge" class="badge muted">conectando...</span>
+        <button id="soundBtn" class="icon-btn" type="button" title="Som">🔊</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="homeView" class="view active">
+        <div class="auto-entry card">
+          <div class="auto-entry-icon">🎲</div>
+          <span class="eyebrow">Ludo online</span>
+          <h1 id="loadingTitle">Preparando sua partida...</h1>
+          <p id="loadingText">Conectando à sala.</p>
+          <div class="loading-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+      </section>
+
+      <section id="lobbyView" class="view">
+        <div class="lobby-layout">
+          <div class="lobby-main card">
+            <span class="eyebrow">Sala privada</span>
+            <h2>Sua partida está pronta</h2>
+            <p>Envie o convite. Quem abrir o link entra automaticamente, sem nome e sem código.</p>
+            <div class="invite-box">
+              <div><span>Código da sala</span><strong id="roomCodeText">------</strong></div>
+              <button id="copyCodeBtn" class="btn secondary" type="button">Copiar código</button>
+            </div>
+            <div class="invite-link-row">
+              <input id="inviteLink" readonly />
+              <button id="copyLinkBtn" class="btn primary" type="button">Copiar link</button>
+            </div>
+            <button id="shareBtn" class="btn whatsapp full" type="button">Compartilhar convite</button>
+          </div>
+
+          <div class="card players-card">
+            <div class="panel-head"><h3>Jogadores</h3><span id="playerCount" class="badge">1/4</span></div>
+            <div id="lobbyPlayers" class="player-list"></div>
+            <button id="startGameBtn" class="btn primary full" type="button">Iniciar partida</button>
+            <p id="lobbyHint" class="subtle center">Aguardando pelo menos mais 1 jogador...</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameView" class="view">
+        <div class="game-layout">
+          <div class="game-main card">
+            <div class="game-head">
+              <div><span class="eyebrow">Sala <b id="gameRoomCode"></b></span><h2 id="turnTitle">Vez de...</h2></div>
+              <button id="gameInviteBtn" class="btn secondary small" type="button">Convidar</button>
+            </div>
+            <div id="board" class="board" aria-label="Tabuleiro de Ludo"></div>
+          </div>
+          <aside class="game-side">
+            <div class="card dice-card"><div id="dice" class="dice" aria-label="Dado">⚄</div><button id="rollBtn" class="btn primary full" type="button">Jogar dado</button><p id="actionHint" class="center subtle">Aguarde sua vez.</p></div>
+            <div class="card"><div class="panel-head"><h3>Placar</h3><span id="roundBadge" class="badge">Em jogo</span></div><div id="scoreList" class="score-list"></div></div>
+            <div class="card log-card"><h3>Partida</h3><div id="gameLog" class="game-log"></div></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="inviteModal" class="modal-backdrop hidden">
+      <div class="modal-card">
+        <div class="panel-head"><h2>Convidar jogadores</h2><button id="closeInviteModal" class="icon-btn" type="button">✕</button></div>
+        <p>Quem abrir este link entra direto na sua sala:</p>
+        <input id="gameInviteLink" readonly />
+        <button id="gameShareBtn" class="btn whatsapp full" type="button">Compartilhar</button>
+      </div>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+  </div>
+  <script src="/game-client.js?v=5"></script>
+</body>
+</html>
