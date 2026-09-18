@@ -1,0 +1,12 @@
+{
+  "name": "ludo-friends-vercel",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "dependencies": {
+    "@socket.io/redis-adapter": "^8.3.0",
+    "redis": "^5.8.2",
+    "socket.io": "^4.8.1"
+  }
+}
