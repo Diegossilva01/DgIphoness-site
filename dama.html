@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1c" />
+  <title>Jogos Friends • Dama</title>
+  <link rel="stylesheet" href="./styles.css?v=41" />
+</head>
+<body class="checkers-page">
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Voltar ao Ludo">
+        <span class="checkers-brand-mark" aria-hidden="true">♛</span>
+        <span class="brand-copy"><strong>Dama</strong><small>FRIENDS</small></span>
+      </a>
+      <div class="top-actions">
+        <a class="btn secondary small top-game-link" href="./index.html">🎲 Ludo</a>
+        <span id="connectionBadge" class="badge status-ready">pronto</span>
+        <button id="soundBtn" class="icon-btn" type="button" title="Som do jogo" aria-label="Som do jogo">🔊</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="modeView" class="view active">
+        <div class="home-shell">
+          <div class="hero-card card premium-card checkers-hero">
+            <div class="hero-copy">
+              <span class="eyebrow">NOVO JOGO</span>
+              <h1>Dama</h1>
+              <p>Capture as peças do adversário, faça damas e domine o tabuleiro. Jogue online por convite, contra o robô ou no mesmo celular.</p>
+              <div class="hero-actions">
+                <button id="friendModeBtn" class="btn primary big" type="button">🌐 Jogar com amigo</button>
+                <button id="botModeBtn" class="btn secondary big" type="button">🤖 Jogar contra o robô</button>
+                <button id="localModeBtn" class="btn secondary big" type="button">👥 2 no mesmo celular</button>
+                <a class="btn game-switch big" href="./index.html">🎲 Voltar ao Ludo</a>
+              </div>
+              <div class="mini-features">
+                <span>⚔️ Captura obrigatória</span>
+                <span>👑 Promoção para dama</span>
+                <span>💬 Chat + voz online</span>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <div class="checkers-showcase">
+                <div class="show-checker red c1">♟</div><div class="show-checker blue c2">♟</div>
+                <div class="show-checker red king c3">♛</div><div class="show-checker blue c4">♟</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lobbyView" class="view">
+        <div class="home-shell">
+          <div class="lobby-grid">
+            <div class="card lobby-main-card premium-card">
+              <div class="lobby-icon">♟️</div>
+              <span class="eyebrow">DAMA ONLINE</span>
+              <h1 id="lobbyTitle">Sala criada</h1>
+              <p id="lobbyText">Envie o convite para seu amigo. Quando ele entrar, a partida começa automaticamente.</p>
+              <div class="room-code-box"><span>CÓDIGO DA SALA</span><strong id="roomCode">------</strong></div>
+              <div class="invite-link-box" id="inviteLink">Preparando convite...</div>
+              <div class="lobby-actions">
+                <button id="shareBtn" class="btn primary big full" type="button">📲 Compartilhar convite</button>
+                <button id="copyBtn" class="btn secondary full" type="button">🔗 Copiar link</button>
+                <button id="cancelLobbyBtn" class="btn ghost full" type="button">← Voltar</button>
+              </div>
+            </div>
+            <div class="card waiting-card">
+              <div class="waiting-orb checkers-orb"><span></span></div>
+              <h3>Esperando seu amigo</h3>
+              <div class="connection-state" id="lobbyStatus"><i></i><span>Preparando sala...</span></div>
+              <div class="waiting-note">Quando os dois estiverem conectados, o tabuleiro abre sozinho.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameView" class="view">
+        <div class="game-layout">
+          <section class="game-main card premium-card">
+            <div class="game-head">
+              <div><span class="eyebrow" id="gameModeLabel">DAMA</span><h2 id="turnTitle">Sua vez!</h2></div>
+              <div class="game-head-actions"><span id="roundBadge" class="badge">Em jogo</span><button id="backBtn" class="btn secondary small" type="button">← Menu</button></div>
+            </div>
+            <div class="board-stage checkers-stage"><div id="board" class="checkers-board" aria-label="Tabuleiro de Dama"></div></div>
+          </section>
+
+          <aside class="game-side">
+            <div class="card checkers-help-card control-card">
+              <div class="dice-topline"><span>JOGADA</span><span class="turn-dot"></span></div>
+              <div class="checkers-help-icon">♛</div>
+              <p id="actionHint" class="center subtle">Escolha uma peça.</p>
+              <div class="rule-pills"><span>Captura obrigatória</span><span>Dama ao chegar no fim</span></div>
+            </div>
+
+            <div class="card score-card">
+              <div class="panel-head"><h3>Jogadores</h3><span class="tiny-label">PEÇAS</span></div>
+              <div id="scoreList" class="score-list"></div>
+            </div>
+
+            <div id="socialCard" class="card social-card" hidden>
+              <div class="social-head"><div><span class="tiny-label">ONLINE</span><h3>Conversa</h3></div><span id="chatOnlineDot" class="online-dot"></span></div>
+              <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+              <form id="chatForm" class="chat-form"><input id="chatInput" type="text" maxlength="280" autocomplete="off" placeholder="Digite uma mensagem..." aria-label="Mensagem" /><button id="chatSendBtn" class="chat-send" type="submit" aria-label="Enviar mensagem">➤</button></form>
+              <div class="voice-box">
+                <div class="voice-copy"><div class="voice-icon">🎙️</div><div><strong>Conversa por voz</strong><span id="voiceStatus">Voz desativada</span></div></div>
+                <div class="voice-actions"><button id="voiceBtn" class="btn voice-primary" type="button">Ativar voz</button><button id="muteBtn" class="btn voice-secondary" type="button" disabled>🔇 Mutar</button></div>
+                <small>Os dois jogadores devem ativar a voz e permitir o microfone.</small>
+              </div>
+              <audio id="remoteAudio" autoplay playsinline></audio>
+            </div>
+
+            <details class="card log-card"><summary><span>Histórico da partida</span><span>⌄</span></summary><div id="gameLog" class="game-log"></div></details>
+            <button id="newGameBtn" class="btn secondary full" type="button">🔄 Nova partida</button>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast hidden"></div>
+  </div>
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="./dama.js?v=41"></script>
+</body>
+</html>
