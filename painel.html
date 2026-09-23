@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel | Adones Cell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">A</span>
+        <span><strong>ADONES</strong><small>CELL</small></span>
+      </a>
+      <nav class="sidebar-nav">
+        <button class="active" data-panel="overview">▦ Visão geral</button>
+        <button data-panel="orders">◫ Ordens de serviço</button>
+        <button data-panel="finance">◒ Financeiro</button>
+        <button data-panel="expenses">↘ Gastos</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="index.html">← Voltar para o site</a>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-top">
+        <div>
+          <button class="mobile-menu" id="mobileMenu">☰</button>
+          <div>
+            <h1 id="pageTitle">Visão geral</h1>
+            <p>Gestão da assistência técnica</p>
+          </div>
+        </div>
+        <div class="user-chip">
+          <div><strong style="font-size:12px">Administrador</strong><small style="display:block;color:#7d899d;font-size:10px">Acesso liberado</small></div>
+          <span class="avatar">A</span>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <section class="panel-section active" id="overview">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-top"><small>OS abertas</small><span class="stat-icon">◫</span></div>
+              <strong id="statOpen">0</strong>
+              <div class="trend">Aparelhos em atendimento</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-top"><small>Faturamento</small><span class="stat-icon">↗</span></div>
+              <strong id="statRevenue">R$ 0</strong>
+              <div class="trend">Total das ordens cadastradas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-top"><small>Custos de peças</small><span class="stat-icon">↘</span></div>
+              <strong id="statCosts">R$ 0</strong>
+              <div class="trend">Custo técnico informado</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-top"><small>Lucro estimado</small><span class="stat-icon">◎</span></div>
+              <strong id="statProfit">R$ 0</strong>
+              <div class="trend">Receitas - custos - gastos</div>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="card">
+              <div class="card-head">
+                <div><h3>Ordens recentes</h3><p>Últimos aparelhos cadastrados</p></div>
+                <button class="btn btn-primary" id="quickNewOrder">+ Nova OS</button>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>OS</th><th>Cliente</th><th>Aparelho</th><th>Status</th><th>Valor</th></tr></thead>
+                  <tbody id="recentOrders"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <div><h3>Status dos reparos</h3><p>Distribuição atual</p></div>
+              </div>
+              <div class="progress-list" id="statusProgress"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-section" id="orders">
+          <div class="card">
+            <div class="toolbar">
+              <div class="toolbar-left">
+                <input id="orderSearch" placeholder="Buscar cliente, OS ou iPhone" />
+                <select id="statusFilter">
+                  <option value="">Todos os status</option>
+                  <option>Recebido</option>
+                  <option>Em análise</option>
+                  <option>Em reparo</option>
+                  <option>Pronto</option>
+                  <option>Entregue</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" id="newOrderBtn">+ Nova ordem</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>OS</th><th>Cliente</th><th>Telefone</th><th>Aparelho</th><th>Serviço</th><th>Status</th><th>Venda</th><th>Custo</th><th>Ações</th></tr></thead>
+                <tbody id="ordersTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-section" id="finance">
+          <div class="finance-summary">
+            <div class="finance-big income"><span>Faturamento</span><strong id="financeRevenue">R$ 0</strong></div>
+            <div class="finance-big expense"><span>Custos + gastos</span><strong id="financeCosts">R$ 0</strong></div>
+            <div class="finance-big profit"><span>Lucro líquido estimado</span><strong id="financeProfit">R$ 0</strong></div>
+          </div>
+          <div class="finance-layout">
+            <div class="card">
+              <div class="card-head"><div><h3>Receita x custos</h3><p>Resumo visual das ordens</p></div></div>
+              <div class="finance-bars" id="financeBars"></div>
+            </div>
+            <div class="card">
+              <div class="card-head"><div><h3>Mais lucrativos</h3><p>Ordens com maior margem</p></div></div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>OS</th><th>Serviço</th><th>Lucro</th></tr></thead>
+                  <tbody id="profitTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-section" id="expenses">
+          <div class="card">
+            <div class="toolbar">
+              <div class="toolbar-left">
+                <input id="expenseSearch" placeholder="Buscar gasto" />
+              </div>
+              <button class="btn btn-primary" id="newExpenseBtn">+ Novo gasto</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Valor</th><th>Ações</th></tr></thead>
+                <tbody id="expensesTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal">
+      <div class="modal-head"><h3 id="orderModalTitle">Nova ordem de serviço</h3><button class="close-btn" data-close="orderModal">✕</button></div>
+      <form id="orderForm">
+        <input type="hidden" id="orderEditId" />
+        <div class="form-grid">
+          <label>Cliente<input id="oClient" required /></label>
+          <label>Telefone<input id="oPhone" /></label>
+          <label>Aparelho<input id="oModel" required placeholder="Ex.: iPhone 14 Pro" /></label>
+          <label>Serviço<input id="oService" required placeholder="Ex.: Troca de tela" /></label>
+          <label>Status
+            <select id="oStatus">
+              <option>Recebido</option><option>Em análise</option><option>Em reparo</option><option>Pronto</option><option>Entregue</option>
+            </select>
+          </label>
+          <label>Data de entrada<input id="oReceived" type="date" /></label>
+          <label>Valor cobrado (R$)<input id="oPrice" type="number" min="0" step="0.01" required /></label>
+          <label>Custo da peça (R$)<input id="oCost" type="number" min="0" step="0.01" required /></label>
+          <label class="full-row">Observação técnica<textarea id="oNotes" rows="3"></textarea></label>
+        </div>
+        <div class="form-actions"><button type="button" class="btn btn-secondary" data-close="orderModal">Cancelar</button><button class="btn btn-primary">Salvar OS</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="expenseModal">
+    <div class="modal" style="max-width:560px">
+      <div class="modal-head"><h3>Novo gasto</h3><button class="close-btn" data-close="expenseModal">✕</button></div>
+      <form id="expenseForm">
+        <div class="form-grid">
+          <label>Descrição<input id="eDescription" required /></label>
+          <label>Categoria
+            <select id="eCategory"><option>Peças</option><option>Aluguel</option><option>Marketing</option><option>Ferramentas</option><option>Transporte</option><option>Outros</option></select>
+          </label>
+          <label>Valor (R$)<input id="eValue" type="number" min="0" step="0.01" required /></label>
+          <label>Data<input id="eDate" type="date" required /></label>
+        </div>
+        <div class="form-actions"><button type="button" class="btn btn-secondary" data-close="expenseModal">Cancelar</button><button class="btn btn-primary">Salvar gasto</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Salvo com sucesso.</div>
+  <script src="painel.js"></script>
+</body>
+</html>
