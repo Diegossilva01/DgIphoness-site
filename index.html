@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de pessoas · Neon</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #e8f4ef; background: #091b18; }
+    * { box-sizing: border-box; }
+    body { max-width: 920px; padding: 28px 16px 80px; margin: auto; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 5vw, 2.7rem); }
+    p { color: #a9c0b8; line-height: 1.5; }
+    .card { background: #112a24; border: 1px solid #2c4b41; border-radius: 16px; padding: 20px; margin: 20px 0; }
+    label { display: block; margin: 12px 0 6px; font-weight: 600; }
+    input { width: 100%; padding: 12px; color: inherit; background: #071a16; border: 1px solid #548071; border-radius: 9px; font: inherit; }
+    input[type=file] { border-style: dashed; }
+    button { border: 0; border-radius: 9px; padding: 11px 15px; font: inherit; font-weight: 700; cursor: pointer; background: #62e4ae; color: #083224; }
+    button.secondary { background: #294a3e; color: #e8f4ef; }
+    button.danger { background: #713a3a; color: white; }
+    button:disabled { opacity: .5; cursor: wait; }
+    button:focus-visible, input:focus-visible { outline: 3px solid #9df4cc; outline-offset: 2px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .row > input { flex: 1; min-width: 200px; }
+    .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .person { border: 1px solid #2c4b41; border-radius: 12px; padding: 14px; background: #0b211c; }
+    .person img, .placeholder { width: 100%; height: 170px; object-fit: cover; border-radius: 8px; background: #27443a; }
+    .placeholder { display: grid; place-items: center; font-size: 2.5rem; }
+    .person h3 { margin: 12px 0 4px; overflow-wrap: anywhere; }
+    .person p { margin: 0 0 14px; }
+    .message { min-height: 1.5em; color: #a9efcd; }
+    small { color: #a9c0b8; }
+  </style>
+</head>
+<body>
+  <h1>Cadastro de pessoas</h1>
+  <p>Exemplo para aprender como um site na Vercel salva dados no PostgreSQL do Neon.</p>
+
+  <section class="card" aria-label="Acesso">
+    <label for="password">Senha de acesso</label>
+    <div class="row">
+      <input id="password" type="password" autocomplete="off" placeholder="A senha ADMIN_PASSWORD da Vercel">
+      <button id="connect" type="button">Entrar e carregar</button>
+    </div>
+    <small>A senha fica somente nesta aba até você fechá-la. Use dados fictícios neste teste.</small>
+  </section>
+
+  <section class="card">
+    <h2 id="formTitle">Nova pessoa</h2>
+    <form id="form">
+      <label for="name">Nome</label>
+      <input id="name" maxlength="100" required placeholder="Ex.: Maria de teste">
+      <label for="phone">Telefone</label>
+      <input id="phone" type="tel" maxlength="30" placeholder="Ex.: 11999990000">
+      <label for="photo">Foto (JPG, PNG ou WebP, até 300 KB)</label>
+      <input id="photo" type="file" accept="image/jpeg,image/png,image/webp">
+      <small>Ao editar sem selecionar outra foto, a foto atual permanece. Marque abaixo para removê-la.</small>
+      <label><input id="removePhoto" type="checkbox" style="width:auto"> Remover foto atual</label>
+      <div class="row"><button id="save" type="submit">Cadastrar</button><button id="cancel" class="secondary" type="button" hidden>Cancelar edição</button></div>
+    </form>
+  </section>
+
+  <p id="message" class="message" role="status" aria-live="polite"></p>
+  <section class="card"><div class="row"><h2 style="margin-right:auto">Pessoas cadastradas</h2><button id="refresh" class="secondary" type="button">Atualizar</button></div><div id="people" class="people"></div></section>
+
+  <script type="module">
+    const $ = id => document.getElementById(id);
+    let password = '';
+    let people = [];
+    let editing = null;
+    const message = text => { $('message').textContent = text; };
+
+    async function request(method = 'GET', body) {
+      if (!password) throw new Error('Digite a senha e clique em “Entrar e carregar”.');
+      const response = await fetch('/api/pessoas', {
+        method,
+        headers: { 'Content-Type': 'application/json', 'x-admin-password': password },
+        ...(body ? { body: JSON.stringify(body) } : {})
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.erro || 'Não foi possível concluir a operação.');
+      return result;
+    }
+
+    async function load() {
+      try {
+        const result = await request();
+        people = result.pessoas;
+        const container = $('people');
+        container.replaceChildren();
+        if (!people.length) { container.textContent = 'Nenhuma pessoa cadastrada ainda.'; }
+        for (const person of people) {
+          const card = document.createElement('article'); card.className = 'person';
+          if (person.fotoBase64 && person.fotoTipo) {
+            const img = document.createElement('img');
+            img.src = `data:${person.fotoTipo};base64,${person.fotoBase64}`;
+            img.alt = `Foto de ${person.nome}`;
+            card.append(img);
+          } else {
+            const placeholder = document.createElement('div'); placeholder.className = 'placeholder'; placeholder.setAttribute('aria-hidden', 'true'); placeholder.textContent = '👤'; card.append(placeholder);
+          }
+          const title = document.createElement('h3'); title.textContent = person.nome;
+          const phone = document.createElement('p'); phone.textContent = person.telefone || 'Sem telefone';
+          const actions = document.createElement('div'); actions.className = 'row';
+          const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'secondary'; edit.textContent = 'Editar';
+          edit.addEventListener('click', () => {
+            editing = person; $('formTitle').textContent = 'Editar pessoa'; $('save').textContent = 'Salvar alterações'; $('cancel').hidden = false;
+            $('name').value = person.nome; $('phone').value = person.telefone; $('photo').value = ''; $('removePhoto').checked = false;
+            $('name').focus(); window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+          const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'danger'; remove.textContent = 'Excluir';
+          remove.addEventListener('click', async () => {
+            if (!confirm(`Excluir ${person.nome}? Essa ação não pode ser desfeita.`)) return;
+            try { await request('DELETE', { id: person.id }); message('Pessoa excluída.'); await load(); }
+            catch (error) { message(error.message); }
+          });
+          actions.append(edit, remove); card.append(title, phone, actions); container.append(card);
+        }
+        message(`${people.length} pessoa(s) carregada(s).`);
+      } catch (error) { message(error.message); }
+    }
+
+    function resetForm() {
+      editing = null; $('form').reset(); $('formTitle').textContent = 'Nova pessoa'; $('save').textContent = 'Cadastrar'; $('cancel').hidden = true;
+    }
+
+    $('connect').addEventListener('click', () => { password = $('password').value; $('password').value = ''; load(); });
+    $('refresh').addEventListener('click', load);
+    $('cancel').addEventListener('click', resetForm);
+    $('form').addEventListener('submit', async event => {
+      event.preventDefault();
+      const button = $('save'); button.disabled = true;
+      try {
+        const file = $('photo').files[0];
+        if (file && (file.size > 300 * 1024 || !['image/jpeg', 'image/png', 'image/webp'].includes(file.type))) {
+          throw new Error('Escolha um JPG, PNG ou WebP de até 300 KB.');
+        }
+        let foto = null;
+        if (file) foto = await new Promise((resolve, reject) => {
+          const reader = new FileReader(); reader.onload = () => resolve(reader.result); reader.onerror = () => reject(new Error('Erro ao ler a foto.')); reader.readAsDataURL(file);
+        });
+        else if (editing && !$('removePhoto').checked && editing.fotoBase64) foto = `data:${editing.fotoTipo};base64,${editing.fotoBase64}`;
+        const payload = { nome: $('name').value, telefone: $('phone').value, foto };
+        if (editing) payload.id = editing.id;
+        await request(editing ? 'PUT' : 'POST', payload);
+        resetForm(); await load(); message('Cadastro salvo no Neon.');
+      } catch (error) { message(error.message); }
+      finally { button.disabled = false; }
+    });
+  </script>
+</body>
+</html>

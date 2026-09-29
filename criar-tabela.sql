@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS pessoas_demo (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  nome TEXT NOT NULL,
+  telefone TEXT NOT NULL DEFAULT '',
+  foto BYTEA,
+  foto_tipo TEXT,
+  criado_em TIMESTAMPTZ NOT NULL DEFAULT now()
+);
